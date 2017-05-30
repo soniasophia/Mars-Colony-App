@@ -7,13 +7,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { EncounterComponent } from './pages/encounter/encounter.component';
+import { EncountersComponent } from './pages/encounters/encounters.component';
 import { ReportComponent } from './pages/report/report.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'encounter', component: EncounterComponent },
+  { path: 'encounters', component: EncountersComponent },
   { path: 'report', component: ReportComponent }
 ];
 
@@ -22,7 +22,7 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     RegisterComponent,
-    EncounterComponent,
+    EncountersComponent,
     ReportComponent
   ],
   imports: [
