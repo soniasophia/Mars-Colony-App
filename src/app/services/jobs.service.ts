@@ -4,24 +4,23 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import {Alien} from '../models/alien';
+import { Job } from '../models/job';
 
 @Injectable()
-export class ReportService {
+export class JobsService {
 
-  private REPORT_URL = 'https://red-wdp-api.herokuapp.com/api/mars/aliens';
+private REGISTER_URL = 'https://red-wdp-api.herokuapp.com/api/mars/jobs';
 
   constructor(private http: Http) { }
 
   getData() {
-    return this.http.get(this.REPORT_URL)
-    .map(this.extractAlien);
-
+    return this.http.get(this.REGISTER_URL)
+    .map(this.extractJobs);
   }
 
-  extractAlien(res: Response) {
-    const aliens = res.json();
-    return aliens;
+  extractJobs(res: Response) {
+    const jobs = res.json();
+    return jobs;
   }
 
   handleError() {

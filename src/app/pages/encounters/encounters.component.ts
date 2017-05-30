@@ -13,9 +13,7 @@ export class EncountersComponent implements OnInit {
 
   encounters: Encounter[] = [];
 
-  constructor(private encounterService: EncountersService) {
-
-   }
+  constructor(private encounterService: EncountersService) { }
 
   ngOnInit() {
     this.encounterService.getData()

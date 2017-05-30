@@ -6,15 +6,14 @@
       <input type="number" placeholder="Enter your age" />
       <select>
         <option value="1">Select an occupation</option>
-        <option value="2">Job #1</option>
-        <option value="3">Job #2</option>
-        <option value="4">Job #3</option>
-        <option value="5">Job #4</option>
-        <option value="5">Job #5</option>
+        <option value="" *ngFor="let job of jobs">{{job.name}}</option>
       </select>
     </fieldset>
     <button type="submit">Register</button>
   </form>
 </div>
+
+
+
   
 
