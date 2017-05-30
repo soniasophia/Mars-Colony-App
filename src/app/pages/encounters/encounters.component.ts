@@ -1,15 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { Encounter } from '../../models/encounter';
+import { EncountersService } from '../../services/encounters.service';
 
 @Component({
   selector: 'app-encounters',
   templateUrl: './encounters.component.html',
-  styleUrls: ['./encounters.component.scss']
+  styleUrls: ['./encounters.component.scss'],
+  providers: [EncountersService]
 })
+
 export class EncountersComponent implements OnInit {
 
-  constructor() { }
+  encounters: Encounter[] = [];
+
+  constructor(private encounterService: EncountersService) {
+
+   }
 
   ngOnInit() {
+    this.encounterService.getData()
+      .subscribe((data) => {
+        this.encounters = data.encounters;
+      });
+    // EncountersService.getData(this.ENCOUNTERS_URL).then((list) => {
+    //   this.encounters = list;
+    // });
   }
-
 }
