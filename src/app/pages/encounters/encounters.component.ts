@@ -20,8 +20,5 @@ export class EncountersComponent implements OnInit {
       .subscribe((data) => {
         this.encounters = data.encounters;
       });
-    // EncountersService.getData(this.ENCOUNTERS_URL).then((list) => {
-    //   this.encounters = list;
-    // });
   }
 }

@@ -6,14 +6,7 @@
     <fieldset>
       <select>
         <option value="1">Select alien type</option>
-        <option value="2">Alien #1</option>
-        <option value="3">Alien #2</option>
-        <option value="4">Alien #3</option>
-        <option value="5">Alien #4</option>
-        <option value="5">Alien #5</option>
-        <option value="5">Alien #6</option>
-        <option value="5">Alien #7</option>
-        <option value="5">Alien #8</option>
+        <option value="" *ngFor="let alien of aliens">{{alien.type}}</option>
       </select>
       
       <textarea placeholder="Action taken" rows="10"></textarea>

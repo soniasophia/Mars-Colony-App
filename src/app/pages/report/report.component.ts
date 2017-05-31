@@ -1,24 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { Alien } from '../../models/alien';
-import { ReportService } from '../../services/report.service';
+import { AliensService } from '../../services/aliens.service';
 
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
   styleUrls: ['./report.component.scss'],
-  providers: [ReportService]
+  providers: [AliensService]
 })
 export class ReportComponent implements OnInit {
 
-  alien: Alien[] = [];
+  aliens: Alien[] = [];
 
-  constructor(private reportService: ReportService) { }
+  constructor(private reportService: AliensService) { }
 
   ngOnInit() {
     this.reportService.getData()
     .subscribe((data) => {
-      console.log(data);
-      this.alien = data.aliens;
+      this.aliens = data.aliens;
     });
   }
 }
