@@ -1,0 +1,68 @@
+.page {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(100,100,100,0.5)),url(https://www.walldevil.com/wallpapers/a67/surface-mars-screensaver-wallpapers-background.jpg) no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.register {
+  h1 {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: white;
+    margin-bottom: 0;
+  }
+  fieldset {
+    display: flex;
+    border: none;
+    padding: 0 7rem;
+    margin-bottom: 2rem;
+    }
+  }
+
+  input {
+    border: none;
+    border-bottom: 1px solid #fff;
+    box-shadow: none;
+    height: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: .5rem;
+    background: 0 0;
+    margin-bottom: 2rem;
+    width: 98.2%;
+    color: white;
+
+    &::placeholder {
+      color: white;
+  }
+}
+
+.job-select {
+  border-bottom: 1px solid white;
+  width: 100%;
+
+  select {
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid #fff;
+    background: 0 0;
+    border: 1px solid transparent;
+    outline: none;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+  }
+}
+
+button {
+    background: transparent;
+    width: 100%;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: lighter;
+    padding: 0 7rem;
+    margin-top: 2rem; 
+    cursor: pointer;
+}

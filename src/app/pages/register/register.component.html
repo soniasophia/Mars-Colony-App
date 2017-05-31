@@ -1,15 +1,18 @@
 <!doctype html>
 <div class="register page">
+  <h1>Register</h1>
   <form class="register-form">
     <fieldset>
-      <input type="text" placeholder="Enter your name" />
-      <input type="number" placeholder="Enter your age" />
+      <input type="text" placeholder="Name" />
+      <input type="number" placeholder="Age" />
+      <div class="job-select">
       <select>
         <option value="1">Select an occupation</option>
         <option value="" *ngFor="let job of jobs">{{job.name}}</option>
       </select>
+      </div>
     </fieldset>
-    <button type="submit">Register</button>
+    <button type="submit">Check in</button>
   </form>
 </div>
 
