@@ -16,11 +16,11 @@ import { FormGroup, FormControl, FormBuilder, Validators, ValidatorFn, AbstractC
 export class RegisterComponent implements OnInit {
 
   jobs: Job[] = [];
-  colonistName: string;
-  colonistAge: string;
-  colonistJobId: string = 'no job';
-  public colonist: Colonist;
-
+  // colonistName: string;
+  // colonistAge: string;
+  // colonistJobId: string = 'no job';
+  NO_JOB_SELECTED = 'none';
+  colonist: Colonist;
   registerForm: FormGroup;
 
   constructor(private jobService: JobsService, private colonistService: ColonistService) { }
@@ -34,12 +34,12 @@ export class RegisterComponent implements OnInit {
     this.registerForm = new FormGroup ({
       name: new FormControl('', [Validators.required, Validators.maxLength(100), Validators.minLength(3)]),
       age: new FormControl('', [Validators.required]),
-      job_id: new FormControl('', [])
+      job_id: new FormControl(this.NO_JOB_SELECTED, [])
     });
   }
 
   postColonist() {
-    const colonist = new Colonist(this.colonistName, this.colonistAge, this.colonistJobId);
+    const colonist = new Colonist('Sonia', '25', ''); //this.colonistName, this.colonistAge, this.colonistJobId
     this.colonistService.postData(colonist)
       .subscribe((newColonist) => {
       });

@@ -7,8 +7,8 @@
       <input type="number" placeholder="Age" name="age" required formControlName="age"/>
       <div class="job-select">
       <select required formControlName="job_id">
-        <option value="1">Select an occupation</option>
-        <option *ngFor="let job of jobs">{{job.name}}</option>
+        <option [value]="NO_JOB_SELECTED">Select an occupation</option>
+        <option *ngFor="let job of jobs" [value]="job.id">{{job.name}}</option>
       </select>
       </div>
     </fieldset>
