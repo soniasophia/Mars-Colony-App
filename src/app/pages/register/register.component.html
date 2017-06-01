@@ -1,12 +1,12 @@
 <!doctype html>
 <div class="register page">
   <h1>Register</h1>
-  <form class="register-form">
+  <form class="register-form" [formGroup]="registerForm">
     <fieldset>
-      <input type="text" placeholder="Name" name="name" required />
-      <input type="number" placeholder="Age" name="age" required />
+      <input type="text" placeholder="Name" required formControlName="name"/>
+      <input type="number" placeholder="Age" name="age" required formControlName="age"/>
       <div class="job-select">
-      <select name="Occupation" required>
+      <select required formControlName="job_id">
         <option value="1">Select an occupation</option>
         <option *ngFor="let job of jobs">{{job.name}}</option>
       </select>
