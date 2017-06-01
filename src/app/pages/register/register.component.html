@@ -3,11 +3,11 @@
   <h1>Register</h1>
   <form class="register-form">
     <fieldset>
-      <input type="text" placeholder="Name" name="name" />
-      <input type="number" placeholder="Age" name="age" />
+      <input type="text" placeholder="Name" name="name" required />
+      <input type="number" placeholder="Age" name="age" required />
       <div class="job-select">
-      <select name="Occupation">
-        <option value="">Select an occupation</option>
+      <select name="Occupation" required>
+        <option value="1">Select an occupation</option>
         <option *ngFor="let job of jobs">{{job.name}}</option>
       </select>
       </div>

@@ -4,6 +4,7 @@ import { JobsService } from '../../services/jobs.service';
 
 import { Colonist } from '../../models/colonist';
 import { ColonistService } from '../../services/colonist.service';
+import { FormGroup, FormControl, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 
 
 @Component({
