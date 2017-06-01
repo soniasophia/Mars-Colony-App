@@ -7,6 +7,29 @@ import { ColonistService } from '../../services/colonist.service';
 import { FormGroup, FormControl, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 
 
+const cantBe = (value: string): ValidatorFn => {
+  return (control: AbstractControl) => {
+    return control.value === value ? { 'Can\'t be this value': value } : null;
+  };
+};
+
+// const tooOld = (age: number): ValidatorFn => {
+//   return (control: AbstractControl) => {
+//     return control.value > age ? { 'You\'re too old to go to Mars': age } : null;
+//   };
+// };
+
+
+const age = (tooYoung: number, tooOld: number): ValidatorFn => {
+  if (tooYoung < 0 || tooOld < 0) {
+    throw new Error('You can\'t be a negative age');
+  }
+  return (control: AbstractControl) => {
+    return control.value < 0 || control.value < tooYoung || control.value > tooOld ? { 'You\'re not the right age!' : age } : null;
+  };
+};
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -16,9 +39,6 @@ import { FormGroup, FormControl, FormBuilder, Validators, ValidatorFn, AbstractC
 export class RegisterComponent implements OnInit {
 
   jobs: Job[] = [];
-  // colonistName: string;
-  // colonistAge: string;
-  // colonistJobId: string = 'no job';
   NO_JOB_SELECTED = 'none';
   colonist: Colonist;
   registerForm: FormGroup;
@@ -33,13 +53,25 @@ export class RegisterComponent implements OnInit {
 
     this.registerForm = new FormGroup ({
       name: new FormControl('', [Validators.required, Validators.maxLength(100), Validators.minLength(3)]),
-      age: new FormControl('', [Validators.required]),
-      job_id: new FormControl(this.NO_JOB_SELECTED, [])
+      age: new FormControl('', [Validators.required, age(16, 35)]),
+      job_id: new FormControl(this.NO_JOB_SELECTED, [cantBe(this.NO_JOB_SELECTED)])
     });
   }
 
+  register(e) {
+    e.preventDefault();
+    if(this.registerForm.invalid) {
+      // if the form is invalid
+
+    } else {
+      const name = this.registerForm.get('name').value;
+      const age = this.registerForm.get('age').value;
+      const job_id = this.registerForm.get('job_id').value;
+    }
+  }
+
   postColonist() {
-    const colonist = new Colonist('Sonia', '25', ''); //this.colonistName, this.colonistAge, this.colonistJobId
+    const colonist = new Colonist('name', 'age', 'job_id');
     this.colonistService.postData(colonist)
       .subscribe((newColonist) => {
       });
