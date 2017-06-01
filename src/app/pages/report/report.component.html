@@ -1,16 +1,19 @@
 <!doctype html>
 <div class="report page">
-  <h1 class="page-heading">Report Encounter</h1>
-  <h3>Saftey on Mars is your responsibility</h3>
+  <div class="header">
+  <h1>Report Encounter</h1>
+  <p>Saftey on Mars is your responsibility</p>
+  </div>
   <form>
     <fieldset>
+      <div class="alien-select">
       <select>
         <option value="1">Select alien type</option>
         <option value="" *ngFor="let alien of aliens">{{alien.type}}</option>
       </select>
-      
+      </div>
       <textarea placeholder="Action taken" rows="10"></textarea>
       </fieldset>
-    <button type="submit">Submit Report</button>
+    <button type="submit" class="report-button">Submit Report</button>
   </form>
 </div>

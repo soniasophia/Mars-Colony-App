@@ -2,22 +2,36 @@ import { Component, OnInit } from '@angular/core';
 import { Alien } from '../../models/alien';
 import { AliensService } from '../../services/aliens.service';
 
+import { Report } from '../../models/report';
+import { ReportService } from '../../services/report.service';
+
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
   styleUrls: ['./report.component.scss'],
-  providers: [AliensService]
+  providers: [AliensService, ReportService]
 })
 export class ReportComponent implements OnInit {
 
   aliens: Alien[] = [];
+  reportAtype: string;
+  reportDate: string;
+  reportAction: string;
+  reportColonistId: string = 'no alien';
+  report: Report;
 
-  constructor(private reportService: AliensService) { }
+  constructor(private alienService: AliensService, private reportService: ReportService) { }
 
   ngOnInit() {
-    this.reportService.getData()
+    this.alienService.getData()
     .subscribe((data) => {
       this.aliens = data.aliens;
     });
+  }
+
+  postReport() {
+    const report = new Report(this.reportAtype, this.reportAction, this.reportColonistId, this.reportDate);
+    this.reportService.postData(report)
+      .subscribe((newReport) => { });
   }
 }

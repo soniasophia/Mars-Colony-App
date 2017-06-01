@@ -1,11 +1,16 @@
-<!doctype html>
 <div class="encounters page">
-  <div class="encounters-list">
-    <ul>
-      <li *ngFor="let encounter of encounters">{{encounter.date}} - {{encounter.atype}} <br> {{encounter.action}}</li>
-    </ul>
+  <div class="header">
+    <h1>Encounters</h1>
+    <p>See an alien? Report it!</p>
   </div>
-  <div>
-    <a class="report-encounter" routerLink="/report">Report Encounter</a>
+  <ul>
+    <li *ngFor="let encounter of encounters">
+      <div class="date-name">{{encounter.date}} - {{encounter.atype}}</div>{{encounter.action}}
+    </li>
+  </ul>
+  <div class="footer">
+    <fieldset>
+      <button type="submit" class="encounters-button">Report Encounter</button>
+    </fieldset>
   </div>
 </div>

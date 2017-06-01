@@ -15,6 +15,7 @@
     display: flex;
     border: none;
     padding: 0 7rem;
+    margin-top: 1rem;
     margin-bottom: 2rem;
     }
   }
@@ -44,9 +45,8 @@
   select {
     width: 100%;
     margin: 0;
-    border-bottom: 1px solid #fff;
     background: 0 0;
-    border: 1px solid transparent;
+    border: none;
     outline: none;
     box-sizing: border-box;
     color: white;
@@ -63,6 +63,6 @@ button {
     font-size: 2rem;
     font-weight: lighter;
     padding: 0 7rem;
-    margin-top: 2rem; 
+    margin-top: 5rem; 
     cursor: pointer;
 }

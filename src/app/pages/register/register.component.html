@@ -3,16 +3,16 @@
   <h1>Register</h1>
   <form class="register-form">
     <fieldset>
-      <input type="text" placeholder="Name" />
-      <input type="number" placeholder="Age" />
+      <input [(ngModel)]="colonistName" type="text" placeholder="Name" name="name" />
+      <input [(ngModel)]="colonistAge" type="number" placeholder="Age" name="age" />
       <div class="job-select">
-      <select>
-        <option value="1">Select an occupation</option>
-        <option value="" *ngFor="let job of jobs">{{job.name}}</option>
+      <select [(ngModel)]="colonistJobId" name="Occupation">
+        <option value="no job">Select an occupation</option>
+        <option *ngFor="let job of jobs" value="{{job.id}}">{{job.name}}</option>
       </select>
       </div>
     </fieldset>
-    <button type="submit">Check in</button>
+    <button (click)="postColonist()" type="submit">Check in</button>
   </form>
 </div>
 

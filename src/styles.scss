@@ -12,9 +12,15 @@ ul {
 
 li {
   list-style: none;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1, h2, h3, p, a, input {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
+  margin-top: 0;
+}
+
+fieldset {
+  border: none;
 }

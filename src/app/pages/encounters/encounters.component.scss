@@ -1,0 +1,58 @@
+.encounters {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(100,100,100,0.5)),url(https://www.walldevil.com/wallpapers/a67/surface-mars-screensaver-wallpapers-background.jpg) no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  text-align: center;
+}
+
+.header, button {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 100;
+  padding: 3rem 7rem;
+  h1 {
+    margin-bottom: .5rem;
+    font-size: 2.2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+
+ul {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 100;
+  line-height: 1.2rem;
+  overflow: scroll;
+  text-align: left;
+  padding: 0 1.5rem;
+}
+
+li {
+  color: #fff;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+
+  .date-name {
+    font-size: .8rem;
+    font-weight: 300;
+  }
+}
+
+.footer {
+  background-color: #4F2532;
+  padding: 2rem 0;
+}
+
+.encounters-button {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+}
