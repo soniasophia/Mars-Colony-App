@@ -13,6 +13,7 @@ Mars Colony App (Desktop)
 ## Technologies Used
 - Visual Studio Code for Mac (https://code.visualstudio.com/)
 - Git and Git Bash
+- Typescript (https://www.typescriptlang.org/)
 - Angular 2 (https://angular.io/)
 - Postman (https://www.getpostman.com/)
 - RED WDP Mars Colony APIs
