@@ -18,7 +18,7 @@ const cantBe = (value: string): ValidatorFn => {
 
 const colonistAge = (tooYoung: number, tooOld: number): ValidatorFn => {
   if (tooYoung < 0 || tooOld < 0) {
-    throw new Error('You can\'t be a negative age');
+    throw new Error('You can\'t be a negative age!');
   }
   return (control: AbstractControl) => {
     return control.value < 0 || control.value < tooYoung || control.value > tooOld ? { 'You\'re not the right age!' : colonistAge } : null;
@@ -50,7 +50,7 @@ export class RegisterComponent implements OnInit {
 
     this.registerForm = new FormGroup ({
       name: new FormControl('', [Validators.required, Validators.maxLength(100), Validators.minLength(3)]),
-      age: new FormControl('', [Validators.required, colonistAge(16, 35)]),
+      age: new FormControl('', [Validators.required, colonistAge(16, 40)]),
       job_id: new FormControl(this.NO_JOB_SELECTED, [cantBe(this.NO_JOB_SELECTED)])
     });
   }

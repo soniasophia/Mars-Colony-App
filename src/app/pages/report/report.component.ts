@@ -39,8 +39,6 @@ export class ReportComponent implements OnInit {
     });
 
     this.reportForm = new FormGroup ({
-      // colonist_id: new FormControl('', [Validators.required]),
-      // date: new FormControl('', [Validators.required]),
       action: new FormControl('', [Validators.required, Validators.maxLength(100), Validators.minLength(3)]),
       atype: new FormControl(this.NO_ALIEN_SELECTED, [cantBe(this.NO_ALIEN_SELECTED)])
     });

@@ -1,9 +1,10 @@
 <!doctype html>
 <div class="register page">
   <h1>Register</h1>
-  <form class="register-form" [formGroup]="registerForm" (ngSubmit)="register($event)">
+  <form name="register-form" class="register-form" [formGroup]="registerForm" (ngSubmit)="register($event)">
     <fieldset>
       <input type="text" placeholder="Name" required formControlName="name"/>
+
       <input type="number" placeholder="Age" name="age" required formControlName="age"/>
       <div class="job-select">
       <select required formControlName="job_id">
@@ -12,7 +13,9 @@
       </select>
       </div>
     </fieldset>
-    <button type="submit" [disabled]="registerForm.invalid">Check in</button>
+    <div class="submit">
+    <button type="submit" class="register-button" [disabled]="registerForm.invalid">Check in</button>
+    </div>
   </form>
 </div>
 
