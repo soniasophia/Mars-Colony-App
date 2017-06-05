@@ -47,8 +47,12 @@ li {
 }
 
 .footer {
-  background-color: #4F2532;
+  background-color: #3b1828;
   padding: 2rem 0;
+
+  &:hover {
+    background: #96412c;
+  }
 }
 
 .encounters-button {
@@ -57,4 +61,8 @@ li {
   color: #fff;
   cursor: pointer;
   padding: 0;
-}
+  
+  &:hover {
+      background: #96412c;
+  }
+} 
