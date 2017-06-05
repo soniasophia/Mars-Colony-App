@@ -1,6 +1,7 @@
 # Project 5: Mars Colony App
 
 ![MarsColony](https://image.ibb.co/fRzKca/Screen_Shot_2017_06_04_at_12_11_20_PM.png)
+
 Mars Colony App (Desktop)
 
 ## Project Objective
